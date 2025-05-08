@@ -17,26 +17,23 @@ VALUES (
     '使用場景說明...', 
     ARRAY['https://data.taipei/dataset/detail?id=a835f3ba-7f50-4b0d-91a6-9df128632d1c'], 
     ARRAY['doit'], 
-    '2025-05-08 22:00:00+00', 
-    '2025-05-07 22:00:00+00', 
+    CURRENT_TIMESTAMP, 
+    CURRENT_TIMESTAMP, 
     'two_d', 
 	$$
 	SELECT
-		x_axis, y_axis, SUM(data) AS data
+		x_axis, data
 	FROM
 	(
 		SELECT
 			行政區 AS x_axis,
-			'垃圾桶' AS y_axis,
-			COUNT(*) AS data
+			COUNT(*)::numeric AS data
 		FROM garbage_can_tpe
 		GROUP BY
 			行政區
 	) AS d
-	GROUP BY
-		x_axis, y_axis
-	ORDER BY 
-		ARRAY_POSITION(ARRAY['北投區', '士林區', '內湖區', '南港區', '松山區', '信義區', '中山區', '大同區', '中正區', '萬華區', '大安區', '文山區'], d.x_axis);
+ORDER BY 
+	ARRAY_POSITION(ARRAY['北投區', '士林區', '內湖區', '南港區', '松山區', '信義區', '中山區', '大同區', '中正區', '萬華區', '大安區', '文山區'], d.x_axis);
 	$$,
     'taipei'
 );

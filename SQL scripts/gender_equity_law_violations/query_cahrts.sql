@@ -43,8 +43,8 @@ VALUES (
     '使用場景說明...', 
     ARRAY['https://data.taipei/dataset/detail?id=12f3421a-94f4-4a5e-8642-143dee2fa551', 'https://data.ntpc.gov.tw/datasets/d7b245c0-0ba7-4ee9-9021-5ca27ac52eb4'], 
     ARRAY['doit', 'ntpc'], 
-    '2025-05-07 07:35:00+00', 
-    '2025-05-07 07:35:00+00', 
+    CURRENT_TIMESTAMP, 
+    CURRENT_TIMESTAMP, 
     'time', 
 $$
 SELECT
