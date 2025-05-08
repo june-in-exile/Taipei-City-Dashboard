@@ -1,6 +1,6 @@
-DELETE FROM public.query_charts WHERE index = 'gender_equity_law_violations';
+DELETE FROM query_charts WHERE index = 'gender_equity_law_violations';
 
-INSERT INTO public.query_charts (index, time_from, source, short_desc, long_desc, use_case, links, contributors, created_at, updated_at, query_type, query_chart, city)
+INSERT INTO query_charts (index, time_from, source, short_desc, long_desc, use_case, links, contributors, created_at, updated_at, query_type, query_chart, city)
 VALUES (
     'gender_equity_law_violations', 
     'static', 
@@ -33,7 +33,7 @@ $$,
     'taipei'
 );
 
-INSERT INTO public.query_charts (index, time_from, source, short_desc, long_desc, use_case, links, contributors, created_at, updated_at, query_type, query_chart, city)
+INSERT INTO query_charts (index, time_from, source, short_desc, long_desc, use_case, links, contributors, created_at, updated_at, query_type, query_chart, city)
 VALUES (
     'gender_equity_law_violations', 
     'static', 
@@ -81,4 +81,4 @@ $$,
     'metrotaipei'
 );
 
-SELECT * FROM public.query_charts ORDER BY index ASC;
+SELECT * FROM query_charts ORDER BY index ASC;
